@@ -15,6 +15,13 @@
       "url": "https://kami-demos.vercel.app/ink"
     },
     {
+      "title": "Kami-like",
+      "note": "Kami demo",
+      "description": "A small replica of Kami's stack (AngularJS shell, React islands, pdf.js, Centrifugo-style sync) with six flagged fixes and before/after metrics.",
+      "status": "Live",
+      "url": "https://kami-like-codeminion.vercel.app"
+    },
+    {
       "title": "InkBench",
       "note": "kami-demos repo",
       "description": "An automated ink-latency profiling harness built on Puppeteer and CDP.",
