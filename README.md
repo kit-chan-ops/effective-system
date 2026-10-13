@@ -34,9 +34,11 @@ Then visit <http://127.0.0.1:8080/>.
 
 ## Manual step still required
 
-GitHub Pages is not turned on for this repository yet. Someone with admin access needs to set **Settings → Pages → Build and deployment → Source** to **GitHub Actions**.
+GitHub Pages is not enabled, so the site is not published yet. Someone with admin access on this repository needs to set **Settings → Pages → Build and deployment → Source** to **GitHub Actions**.
 
-After that, push to `main` again or re-run **Deploy static content to Pages**. The site is then served at <https://kit-chan-ops.github.io/effective-system/>.
+The first run of **Deploy static content to Pages** failed in **Setup Pages** with `Get Pages site failed` until that source is selected. `actions/configure-pages` can enable Pages only with a separate admin token, not with the workflow `GITHUB_TOKEN`, so this settings change stays manual.
+
+After the source is **GitHub Actions**, re-run **Deploy static content to Pages** from the Actions tab. The site is then served at <https://kit-chan-ops.github.io/effective-system/>.
 
 ## License
 
