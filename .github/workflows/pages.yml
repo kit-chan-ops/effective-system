@@ -1,0 +1,70 @@
+# Deploys the static demo index to GitHub Pages.
+# The repository setting Settings > Pages > Source must be GitHub Actions
+# before this workflow can publish.
+name: Deploy static content to Pages
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate demos.json
+        run: |
+          python3 - << 'PY'
+          import json, sys
+          data = json.load(open("demos.json", encoding="utf-8"))
+          demos = data.get("demos")
+          if not isinstance(demos, list) or not demos:
+              sys.exit("demos.json needs a non-empty demos list")
+          allowed = {"Live", "In build"}
+          for i, demo in enumerate(demos, start=1):
+              title = demo.get("title")
+              description = demo.get("description")
+              status = demo.get("status")
+              if not isinstance(title, str) or not title.strip():
+                  sys.exit(f"demo {i} needs a title")
+              if not isinstance(description, str) or not description.strip():
+                  sys.exit(f"demo {i} needs a description")
+              if status not in allowed:
+                  sys.exit(f"demo {i} status must be Live or In build")
+              url = demo.get("url")
+              if url is not None and (not isinstance(url, str) or not url.startswith("https://")):
+                  sys.exit(f"demo {i} url must be an https URL or omitted")
+          print(f"{len(demos)} demos ok")
+          PY
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Collect site files
+        run: |
+          mkdir -p _site
+          cp index.html styles.css main.js demos.json favicon.svg _site/
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5

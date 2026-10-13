@@ -1,0 +1,47 @@
+{
+  "demos": [
+    {
+      "title": "Never lose a stroke",
+      "note": "Kami demo",
+      "description": "Local-first ink that survives going offline and reloading.",
+      "status": "Live",
+      "url": "https://kami-demos.vercel.app/never-lose"
+    },
+    {
+      "title": "Ink that never lags",
+      "note": "Kami demo",
+      "description": "Smooth drawing on a 300-page PDF, stroke p95 of 10.4ms at 4x CPU throttling.",
+      "status": "Live",
+      "url": "https://kami-demos.vercel.app/ink"
+    },
+    {
+      "title": "InkBench",
+      "note": "kami-demos repo",
+      "description": "An automated ink-latency profiling harness built on Puppeteer and CDP.",
+      "status": "In build"
+    },
+    {
+      "title": "Inkwell",
+      "description": "A browser-based document signer for PDF, and soon DOCX, text and images.",
+      "status": "In build",
+      "url": "https://inkwell-v1.vercel.app"
+    },
+    {
+      "title": "HK Atlas",
+      "description": "A map of Hong Kong community perspectives with an AI chat.",
+      "status": "Live",
+      "url": "https://hk-atlas.vercel.app"
+    },
+    {
+      "title": "Mythic Tactics Codex",
+      "description": "A mobile-first tier-list maker.",
+      "status": "Live",
+      "url": "https://mythic-tactics-codex.vercel.app"
+    },
+    {
+      "title": "Time-series visualization showcase",
+      "description": "A showcase of time-series visualization.",
+      "status": "In build"
+    }
+  ]
+}
