@@ -39,9 +39,10 @@
       "url": "https://mythic-tactics-codex.vercel.app"
     },
     {
-      "title": "Time-series visualization showcase",
-      "description": "A showcase of time-series visualization.",
-      "status": "In build"
+      "title": "Lateen",
+      "description": "Three instruments for reading tracks through time.",
+      "status": "Live",
+      "url": "https://lateen.vercel.app"
     }
   ]
 }
