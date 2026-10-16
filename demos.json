@@ -50,6 +50,13 @@
       "description": "Three instruments for reading tracks through time.",
       "status": "Live",
       "url": "https://lateen.vercel.app"
+    },
+    {
+      "title": "Shopper",
+      "note": "Shopper demo",
+      "description": "A mobile-friendly product comparison site with filters and results sorted by lowest total cost; the current demo compares glass and steel takeout containers from NZ and China-direct sellers.",
+      "status": "Live",
+      "url": "https://shopper-results.vercel.app/searches/glass-steel-takeout-containers/"
     }
   ]
 }
